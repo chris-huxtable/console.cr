@@ -1,4 +1,7 @@
 # console.cr
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://chris-huxtable.github.io/console.cr/)
+[![GitHub release](https://img.shields.io/github/release/chris-huxtable/console.cr.svg)](https://github.com/chris-huxtable/console.cr/releases)
+[![Build Status](https://travis-ci.org/chris-huxtable/console.cr.svg?branch=master)](https://travis-ci.org/chris-huxtable/console.cr)
 
 Easy to use output control allowing redirection and buffering.
 
