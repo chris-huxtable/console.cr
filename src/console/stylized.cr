@@ -131,4 +131,10 @@ module Console::Error
 	def self.item(label, extra = nil, justify : Int = 0, *, symbol = 'x', separator = ' ', strong : Bool = false) : Console.class
 		return Console.item(label, extra, justify, symbol: symbol, separator: separator, style: styling(strong: strong))
 	end
+
+	def self.fatal(*strings, code : Int = 1, separator = " ", terminator = "\n") : Nil
+		strongly(*strings, separator: separator, terminator: terminator)
+		exit(code)
+	end
+
 end
