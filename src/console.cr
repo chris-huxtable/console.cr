@@ -254,7 +254,7 @@ module Console
 
 		offset += case symbol
 			when Char	then 1
-			when String	then symbol.to_s
+			when String	then symbol.to_s.size
 			else symbol.to_s.size
 		end
 
