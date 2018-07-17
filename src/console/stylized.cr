@@ -51,71 +51,47 @@ module Console
 
 		macro extended
 
-			protected def self.internal_print(*strings, separator = nil, terminator = nil, style : StyleTypes = DEFAULT) : Console.class
+			protected def self.styling(*, strong : Bool = false) : StyleTypes
+				return strong ? STRONG : DEFAULT
+			end
+
+			protected def self.internal_print(*strings, separator = nil, terminator = nil, style : StyleTypes = styling()) : Console.class
 				return Console.stylize(style) {
 					Console.internal_print(*strings, separator: separator, terminator: terminator)
 				}
 			end
 
-			def self.print(*strings, separator = nil, terminator = nil) : Console.class
-				return Console if ( Console.silenced? )
-				return internal_print(*strings, separator: separator, terminator: terminator)
-			end
+		end
 
-			def self.strongly(*strings, separator = nil, terminator = nil) : Console.class
-				return Console if ( Console.silenced? )
-				return internal_print(*strings, separator: separator, terminator: terminator, style: STRONG)
-			end
+		def print(*strings, separator = nil, terminator = nil) : Console.class
+			return Console if ( Console.silenced? )
+			return internal_print(*strings, separator: separator, terminator: terminator)
+		end
 
-			def self.line(*strings, separator = nil, terminator = '\n') : Console.class
-				return Console if ( Console.silenced? )
-				return internal_print(*strings, separator: separator, terminator: terminator)
-			end
+		def strongly(*strings, separator = nil, terminator = nil) : Console.class
+			return Console if ( Console.silenced? )
+			return internal_print(*strings, separator: separator, terminator: terminator, style: styling(strong: true))
+		end
 
-			def self.words(*strings, separator = ' ', terminator = nil) : Console.class
-				return Console if ( Console.silenced? )
-				return internal_print(*strings, separator: separator, terminator: terminator)
-			end
+		def line(*strings, separator = nil, terminator = '\n') : Console.class
+			return Console if ( Console.silenced? )
+			return internal_print(*strings, separator: separator, terminator: terminator)
+		end
 
-			def self.repeat(string, count : Int = 1, strong : Bool = false) : Console.class
-				return Console if ( Console.silenced? || count <= 0 )
-				return Console.stylize(strong ? STRONG : DEFAULT) {
-					count.times() { Console << string }
-				}
-			end
+		def words(*strings, separator = ' ', terminator = nil) : Console.class
+			return Console if ( Console.silenced? )
+			return internal_print(*strings, separator: separator, terminator: terminator)
+		end
 
-			protected def self.internal_item(label, extra, *, symbol, separator : Char, strong : Bool, justify : Int) : Console.class
-				return Console if ( Console.silenced? )
+		def repeat(string, count : Int = 1, strong : Bool = false) : Console.class
+			return Console if ( Console.silenced? || count <= 0 )
+			return Console.stylize(styling(strong: strong)) {
+				count.times() { Console << string }
+			}
+		end
 
-				label = label.to_s if ( extra )
-
-				Console.stylize(strong ? STRONG : DEFAULT) {
-					Console.print(' ', symbol, ' ')
-					Console.print(label)
-				}
-				return Console.newline if !extra
-
-				Console.offset(label, symbol, separator, justify) if ( justify > 0 )
-
-				Console.print(extra) if ( extra )
-				return Console.newline
-			end
-
-			def self.status(label, status, *, separator : Char = ' ', symbol = '-', strong : Bool = false, justify : Int = 0) : Console.class
-				return Console if ( Console.silenced? )
-
-				label = label.to_s
-				Console.print(' ', symbol, ' ')
-				Console.print(label)
-
-				Console.offset(label, symbol, separator, justify) if ( justify > 0 )
-
-				Console.stylize(strong ? STRONG : DEFAULT) {
-					Console.print(status)
-				}
-				return Console.newline
-			end
-
+		def status(label, status, justify : Int = 0, *, separator : Char = ' ', symbol = '-', strong : Bool = false) : Console.class
+			return Console.status(label, status, justify, symbol: symbol, separator: separator, style: styling(strong: strong))
 		end
 
 	end
@@ -128,8 +104,8 @@ module Console::Affirm
 
 	extend StyleMixin
 
-	def self.item(label, extra = nil, *, symbol = '+', separator : Char = ' ', strong : Bool = false, justify : Int = 0) : Console.class
-		return internal_item(label, extra, symbol: symbol, separator: separator, strong: strong, justify: justify)
+	def self.item(label, extra = nil, justify : Int = 0, *, symbol = '+', separator : Char = ' ', strong : Bool = false) : Console.class
+		return Console.item(label, extra, justify, symbol: symbol, separator: separator, style: styling(strong: strong))
 	end
 end
 
@@ -140,8 +116,8 @@ module Console::Warn
 
 	extend StyleMixin
 
-	def self.item(label, extra = nil, *, symbol = '~', separator : Char = ' ', strong : Bool = false, justify : Int = 0) : Console.class
-		return internal_item(label, extra, symbol: symbol, separator: separator, strong: strong, justify: justify)
+	def self.item(label, extra = nil, justify : Int = 0, *, symbol = '~', separator : Char = ' ', strong : Bool = false) : Console.class
+		return Console.item(label, extra, justify, symbol: symbol, separator: separator, style: styling(strong: strong))
 	end
 end
 
@@ -152,7 +128,7 @@ module Console::Error
 
 	extend StyleMixin
 
-	def self.item(label, extra = nil, *, symbol = 'x', separator = ' ', strong : Bool = false, justify : Int = 0) : Console.class
-		return internal_item(label, extra, symbol: symbol, separator: separator, strong: strong, justify: justify)
+	def self.item(label, extra = nil, justify : Int = 0, *, symbol = 'x', separator = ' ', strong : Bool = false) : Console.class
+		return Console.item(label, extra, justify, symbol: symbol, separator: separator, style: styling(strong: strong))
 	end
 end
