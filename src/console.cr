@@ -158,7 +158,7 @@ module Console
 
 	# MARK: - Listing
 
-	def self.item(label, extra = nil, *, symbol = '-', separator : Char = ' ', justify : Int = 0, style : StyleTypes? = nil) : Console.class
+	def self.item(label, extra = nil, justify : Int = 0, *, symbol = '-', separator : Char = ' ', style : StyleTypes? = nil) : Console.class
 		return Console if ( Console.silenced? )
 
 		label = label.to_s if ( extra )
@@ -175,7 +175,7 @@ module Console
 		return Console.newline
 	end
 
-	def self.status(label, status, *, separator : Char = ' ', symbol = '-', justify : Int = 0, style : StyleTypes? = nil) : Console.class
+	def self.status(label, status, justify : Int = 0, *, separator : Char = ' ', symbol = '-', style : StyleTypes? = nil) : Console.class
 		return Console if ( Console.silenced? )
 
 		label = label.to_s
