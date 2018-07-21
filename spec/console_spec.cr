@@ -268,12 +268,27 @@ describe Console do
 	end
 
 	it "captures" do
-		console_eq(" > this is a test\n")	{ Console.capture("echo", "this is a test", shell: true) }
+		console_eq(" > this is a test\n")				{ Console::Capture.print("echo", {"this is a test"}, shell: true) }
 		Console.stylize = true
-		console_eq("\e[37m > this is a test\n\e[0m")	{ Console.capture("echo", "this is a test", shell: true) }
+		console_eq("\e[37m > this is a test\n\e[0m")	{ Console::Capture.print("echo", {"this is a test"}, shell: true) }
 	ensure
 		Console.stylize = nil
 	end
 
+	it "captures each" do
+		line0 = nil
+		line1 = nil
+		Console::Capture.each("echo", {"this is\n a test"}, shell: true) { |line|
+			next line0 = line if line0.nil?
+			next line1 = line if line1.nil?
+		}
+		line0.should eq("this is")
+		line1.should eq(" a test")
+	end
+
+	it "captures to string" do
+		string = Console::Capture.string("echo", {"this is a test"}, shell: true)
+		string.should eq("this is a test\n")
+	end
 
 end

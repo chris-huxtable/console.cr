@@ -191,37 +191,6 @@ module Console
 	end
 
 
-	# MARK: - Commands
-
-	def self.capture(command : String, env : Process::Env? = nil, clear_env : Bool = false, shell : Bool = false, prefix : String? = " > ", input = CLOSE, error : Bool = false) : Bool
-		return capture_worker(command, nil, env: env, clear_env: clear_env, shell: shell, prefix: prefix, input: input, error: error)
-	end
-
-	def self.capture(command : String, *args : String, env : Process::Env? = nil, clear_env : Bool = false, shell : Bool = false, prefix : String? = " > ", input = CLOSE, error : Bool = false) : Bool
-		return capture_worker(command, args, env: env, clear_env: clear_env, shell: shell, prefix: prefix, input: input, error: error)
-	end
-
-	private def self.capture_worker(command : String, args, env : Process::Env?, clear_env : Bool, shell : Bool, prefix, input, error : Bool) : Bool
-		success = false
-		IO.pipe() { |reader, writer|
-			error = error ? writer : CLOSE
-			spawn {
-				success = Process.run(command, args, env: env, clear_env: clear_env, shell: shell, input: input, output: writer, error: writer).success?
-				writer.close
-			}
-
-			while ( !reader.closed?  && ( line = reader.gets ) )
-				Style.begin(capture_style())
-				Console << prefix if prefix
-				Console << line << '\n'
-				Style.end()
-			end
-		}
-
-		return success
-	end
-
-
 	# MARK: - Silence
 
 	def self.silence() : Console.class
@@ -249,15 +218,21 @@ module Console
 
 	# MARK: - Utilities
 
+	protected def self.offset(label, symbol : Char, separator : Char, justify : Int) : Nil
+		label = label.to_s if !label.is_a?(String)
+		offset = 2 + 1 + label.size
+		Console.repeat(separator, justify - offset) if offset < justify
+	end
+
+	protected def self.offset(label, symbol : String, separator : Char, justify : Int) : Nil
+		label = label.to_s if !label.is_a?(String)
+		offset = 2 + symbol.size + label.size
+		Console.repeat(separator, justify - offset) if offset < justify
+	end
+
 	protected def self.offset(label, symbol, separator : Char, justify : Int) : Nil
-		offset = 2 + label.size
-
-		offset += case symbol
-			when Char	then 1
-			when String	then symbol.to_s.size
-			else symbol.to_s.size
-		end
-
+		label = label.to_s if !label.is_a?(String)
+		offset = 2 + symbol.to_s.size + label.size
 		Console.repeat(separator, justify - offset) if offset < justify
 	end
 
