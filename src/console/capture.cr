@@ -26,6 +26,14 @@ module Console::Capture
 		}
 	end
 
+	def self.style(string, prefix : String? = " > ") : Nil
+		string.to_s.each_line(false) { |line|
+			Style.begin(Console.capture_style())
+			Console << prefix if prefix
+			Console << line
+			Style.end()
+		}
+	end
 
 	# MARK: - Yielding
 

@@ -292,4 +292,8 @@ describe Console do
 		string.should eq("this is a test\n")
 	end
 
+	it "prints styled" do
+		console_eq(" > this is\n > a test")	{ Console::Capture.style("this is\na test") }
+	end
+
 end
