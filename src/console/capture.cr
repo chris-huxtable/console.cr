@@ -36,10 +36,10 @@ module Console::Capture
 
 	# MARK: - String
 
-	def self.string(command : String, args = nil, *, env : Process::Env? = nil, clear_env : Bool = true, shell : Bool = false, input = CLOSE, error : Bool = false) : String?
+	def self.string(command : String, args = nil, *, env : Process::Env? = nil, clear_env : Bool = true, shell : Bool = false, input = CLOSE, error : Bool = false) : { String?, Bool }
 		string = nil
-		capture_worker(command, args, env: env, clear_env: clear_env, shell: shell, input: input, error: error, delimiter: nil) { |value| string = value }
-		return string
+		success = capture_worker(command, args, env: env, clear_env: clear_env, shell: shell, input: input, error: error, delimiter: nil) { |value| string = value }
+		return string, success
 	end
 
 

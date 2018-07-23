@@ -287,7 +287,8 @@ describe Console do
 	end
 
 	it "captures to string" do
-		string = Console::Capture.string("echo", {"this is a test"}, shell: true)
+		string, success = Console::Capture.string("echo", {"this is a test"}, shell: true)
+		success.should be_true
 		string.should eq("this is a test\n")
 	end
 
