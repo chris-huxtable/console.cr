@@ -16,7 +16,9 @@
 class IO::Memory < IO
 
 	def truncate()
-		@bytesize = @pos if @bytesize != @pos
+		check_open
+		check_resizeable
+		@bytesize = @pos
 	end
 
 end
