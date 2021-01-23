@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="console">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="console">
+  <title>Console::Style - console HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          console
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="console/Console" data-name="console">
+      <a href="../Console.html">Console</a>
+      
+        <ul>
+  
+  <li class=" " data-id="console/Console/Affirm" data-name="console::affirm">
+      <a href="../Console/Affirm.html">Affirm</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Capture" data-name="console::capture">
+      <a href="../Console/Capture.html">Capture</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Error" data-name="console::error">
+      <a href="../Console/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" current" data-id="console/Console/Style" data-name="console::style">
+      <a href="../Console/Style.html">Style</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/StyleTypes" data-name="console::styletypes">
+      <a href="../Console/StyleTypes.html">StyleTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Warn" data-name="console::warn">
+      <a href="../Console/Warn.html">Warn</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">enum</span> Console::Style
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L16" target="_blank">
+        console/style.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Black">
+        <strong>Black</strong> = <code><span class="n">30_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Red">
+        <strong>Red</strong> = <code><span class="n">31_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Green">
+        <strong>Green</strong> = <code><span class="n">32_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Yellow">
+        <strong>Yellow</strong> = <code><span class="n">33_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Blue">
+        <strong>Blue</strong> = <code><span class="n">34_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Magenta">
+        <strong>Magenta</strong> = <code><span class="n">35_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Cyan">
+        <strong>Cyan</strong> = <code><span class="n">36_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Grey">
+        <strong>Grey</strong> = <code><span class="n">37_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="White">
+        <strong>White</strong> = <code><span class="n">37_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Bold">
+        <strong>Bold</strong> = <code><span class="n">1_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Intense">
+        <strong>Intense</strong> = <code><span class="n">1_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Itaic">
+        <strong>Itaic</strong> = <code><span class="n">3_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Faint">
+        <strong>Faint</strong> = <code><span class="n">3_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Underline">
+        <strong>Underline</strong> = <code><span class="n">4_u8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Blink">
+        <strong>Blink</strong> = <code><span class="n">5_u8</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#begin(style:Style?):Style.class-class-method" class="signature"><strong>.begin</strong>(style : Style?) : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#begin(styles:Enumerable(Style)):Style.class-class-method" class="signature"><strong>.begin</strong>(styles : Enumerable(Style)) : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end:Style.class-class-method" class="signature"><strong>.end</strong> : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(*strings,styles:StyleTypes?,separator=nil,terminator=nil):Style.class-class-method" class="signature"><strong>.print</strong>(*strings, styles : StyleTypes?, separator = <span class="n">nil</span>, terminator = <span class="n">nil</span>) : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(styles:Enumerable(Style),&block:-%3ENil):Style.class-class-method" class="signature"><strong>.print</strong>(styles : Enumerable(Style), &block :  -> Nil) : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(style:Style?,&block:-%3ENil):Style.class-class-method" class="signature"><strong>.print</strong>(style : Style?, &block :  -> Nil) : <span class="t">Style</span>.<span class="k">class</span></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#black?-instance-method" class="signature"><strong>#black?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blink?-instance-method" class="signature"><strong>#blink?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blue?-instance-method" class="signature"><strong>#blue?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bold?-instance-method" class="signature"><strong>#bold?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cyan?-instance-method" class="signature"><strong>#cyan?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#faint?-instance-method" class="signature"><strong>#faint?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#green?-instance-method" class="signature"><strong>#green?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grey?-instance-method" class="signature"><strong>#grey?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#intense?-instance-method" class="signature"><strong>#intense?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#itaic?-instance-method" class="signature"><strong>#itaic?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#magenta?-instance-method" class="signature"><strong>#magenta?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#red?-instance-method" class="signature"><strong>#red?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s(io:IO)-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Appends a <code>String</code> representation of this enum member to the given <em>io</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#underline?-instance-method" class="signature"><strong>#underline?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#white?-instance-method" class="signature"><strong>#white?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#yellow?-instance-method" class="signature"><strong>#yellow?</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="begin(style:Style?):Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>begin</strong>(style : <a href="../Console/Style.html">Style</a>?) : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#begin(style:Style?):Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="begin(styles:Enumerable(Style)):Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>begin</strong>(styles : Enumerable(<a href="../Console/Style.html">Style</a>)) : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#begin(styles:Enumerable(Style)):Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end:Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>end</strong> : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#end:Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(*strings,styles:StyleTypes?,separator=nil,terminator=nil):Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>print</strong>(*strings, styles : <a href="../Console/StyleTypes.html">StyleTypes</a>?, separator = <span class="n">nil</span>, terminator = <span class="n">nil</span>) : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#print(*strings,styles:StyleTypes?,separator=nil,terminator=nil):Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(styles:Enumerable(Style),&block:->Nil):Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>print</strong>(styles : Enumerable(<a href="../Console/Style.html">Style</a>), &block :  -> Nil) : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#print(styles:Enumerable(Style),&block:-%3ENil):Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(style:Style?,&block:->Nil):Style.class-class-method">
+      <div class="signature">
+        
+        def self.<strong>print</strong>(style : <a href="../Console/Style.html">Style</a>?, &block :  -> Nil) : <span class="t">Style</span>.<span class="k">class</span>
+
+        <a class="method-permalink" href="#print(style:Style?,&block:-%3ENil):Style.class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="black?-instance-method">
+      <div class="signature">
+        
+        def <strong>black?</strong>
+
+        <a class="method-permalink" href="#black?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blink?-instance-method">
+      <div class="signature">
+        
+        def <strong>blink?</strong>
+
+        <a class="method-permalink" href="#blink?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blue?-instance-method">
+      <div class="signature">
+        
+        def <strong>blue?</strong>
+
+        <a class="method-permalink" href="#blue?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bold?-instance-method">
+      <div class="signature">
+        
+        def <strong>bold?</strong>
+
+        <a class="method-permalink" href="#bold?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cyan?-instance-method">
+      <div class="signature">
+        
+        def <strong>cyan?</strong>
+
+        <a class="method-permalink" href="#cyan?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="faint?-instance-method">
+      <div class="signature">
+        
+        def <strong>faint?</strong>
+
+        <a class="method-permalink" href="#faint?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="green?-instance-method">
+      <div class="signature">
+        
+        def <strong>green?</strong>
+
+        <a class="method-permalink" href="#green?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grey?-instance-method">
+      <div class="signature">
+        
+        def <strong>grey?</strong>
+
+        <a class="method-permalink" href="#grey?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="intense?-instance-method">
+      <div class="signature">
+        
+        def <strong>intense?</strong>
+
+        <a class="method-permalink" href="#intense?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="itaic?-instance-method">
+      <div class="signature">
+        
+        def <strong>itaic?</strong>
+
+        <a class="method-permalink" href="#itaic?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="magenta?-instance-method">
+      <div class="signature">
+        
+        def <strong>magenta?</strong>
+
+        <a class="method-permalink" href="#magenta?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="red?-instance-method">
+      <div class="signature">
+        
+        def <strong>red?</strong>
+
+        <a class="method-permalink" href="#red?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO)
+
+        <a class="method-permalink" href="#to_s(io:IO)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct Enum
+            </div>
+          
+          <p>Appends a <code>String</code> representation of this enum member to the given <em>io</em>.</p>
+
+<p>See also: <code><a href="../Console/Style.html#to_s(io:IO)-instance-method">#to_s</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="underline?-instance-method">
+      <div class="signature">
+        
+        def <strong>underline?</strong>
+
+        <a class="method-permalink" href="#underline?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="white?-instance-method">
+      <div class="signature">
+        
+        def <strong>white?</strong>
+
+        <a class="method-permalink" href="#white?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="yellow?-instance-method">
+      <div class="signature">
+        
+        def <strong>yellow?</strong>
+
+        <a class="method-permalink" href="#yellow?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/chris-huxtable/console.cr/blob/e76efc07ca44de98003e81e134d52031db14f003/src/console/style.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

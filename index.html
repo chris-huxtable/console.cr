@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="console">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="console">
+  <title>console HEAD</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          console
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="console/Console" data-name="console">
+      <a href="Console.html">Console</a>
+      
+        <ul>
+  
+  <li class=" " data-id="console/Console/Affirm" data-name="console::affirm">
+      <a href="Console/Affirm.html">Affirm</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Capture" data-name="console::capture">
+      <a href="Console/Capture.html">Capture</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Error" data-name="console::error">
+      <a href="Console/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Style" data-name="console::style">
+      <a href="Console/Style.html">Style</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/StyleTypes" data-name="console::styletypes">
+      <a href="Console/StyleTypes.html">StyleTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="console/Console/Warn" data-name="console::warn">
+      <a href="Console/Warn.html">Warn</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="console.cr" class="anchor" href="#console.cr">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>console.cr</h1>
+
+<p><a href="https://chris-huxtable.github.io/console.cr/" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a>
+<a href="https://github.com/chris-huxtable/console.cr/releases" target="_blank"><img src="https://img.shields.io/github/release/chris-huxtable/console.cr.svg" alt="GitHub release"/></a>
+<a href="https://travis-ci.org/chris-huxtable/console.cr" target="_blank"><img src="https://travis-ci.org/chris-huxtable/console.cr.svg?branch=master" alt="Build Status"/></a></p>
+
+<p>Easy to use output control allowing redirection and buffering.</p>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  console:
+    github: chris-huxtable/console.cr</code></pre>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;console&quot;</span></code></pre>
+
+<h3><a id="printing-to-the-console" class="anchor" href="#printing-to-the-console">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Printing to the Console:</h3>
+
+<pre><code class="language-crystal"><span class="t">Console</span>.print(<span class="s">&quot;This will print without a newline&quot;</span>)
+<span class="t">Console</span>.line(<span class="s">&quot;This will print with a newline&quot;</span>)
+<span class="t">Console</span>.line(<span class="s">&quot;This will&quot;</span>, <span class="s">&quot;print separate strings, with&quot;</span>, <span class="s">&quot;a newline&quot;</span>, separator: <span class="s">&#39; &#39;</span>)
+<span class="t">Console</span>.words(<span class="s">&quot;This&quot;</span>, <span class="s">&quot;will&quot;</span>, <span class="s">&quot;print&quot;</span>, <span class="s">&quot;words&quot;</span>, <span class="s">&quot;or strings&quot;</span>, <span class="s">&quot;separated by single spaces&quot;</span>, <span class="s">&quot;and without a newline&quot;</span>)
+
+<span class="t">Console</span>.print(<span class="s">&quot;All also feature&quot;</span>, separator: <span class="s">&quot;with different defaults&quot;</span>, terminator: <span class="s">&#39;.&#39;</span>)</code></pre>
+
+<h3><a id="printing-lists-to-the-console" class="anchor" href="#printing-lists-to-the-console">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Printing lists to the Console:</h3>
+
+<pre><code class="language-crystal"><span class="t">Console</span>.item(<span class="s">&quot;This is a list label&quot;</span>)
+<span class="c">#=&gt; &quot; - This is a list label\n&quot;</span>
+<span class="t">Console</span>.item(<span class="s">&quot;This is a list label&quot;</span>, <span class="s">&quot;with extras&quot;</span>, justify: <span class="n">30</span>)
+<span class="c">#=&gt; &quot; - This is a list label       with extras\n&quot;</span>
+
+<span class="t">Console</span>.item(<span class="s">&quot;This is a red list label&quot;</span>, <span class="s">&quot;with extras&quot;</span>, justify: <span class="n">30</span>, style: <span class="t">Console</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">Red</span>)
+<span class="c">#=&gt; &quot; - This is a red list label   with extras\n&quot;</span>
+
+<span class="t">Console</span>.status(<span class="s">&quot;This is a list label&quot;</span>)
+<span class="c">#=&gt; &quot; - This is a list label\n&quot;</span>
+<span class="t">Console</span>.status(<span class="s">&quot;This is a list label&quot;</span>, <span class="s">&quot;with a status&quot;</span>, justify: <span class="n">30</span>)
+<span class="c">#=&gt; &quot; - This is a list label       with a status\n&quot;</span>
+<span class="t">Console</span>.status(<span class="s">&quot;This is a red list label&quot;</span>, <span class="s">&quot;with a red status&quot;</span>, justify: <span class="n">30</span>, style: <span class="t">Console</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">Red</span>)
+<span class="c">#=&gt; &quot; - This is a list label       with a red status\n&quot;</span></code></pre>
+
+<h3><a id="printing-to-a-buffer" class="anchor" href="#printing-to-a-buffer">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Printing to a buffer:</h3>
+
+<pre><code class="language-crystal">buffer <span class="o">=</span> <span class="t">Console</span>.buffer() {
+	<span class="t">Console</span>.line(<span class="s">&quot;This will be printed to the buffer&quot;</span>)
+	<span class="t">Console</span>.line(<span class="s">&quot;Which will return a string&quot;</span>)
+
+	<span class="t">Console</span>.repeat(<span class="s">&#39;=&#39;</span>, <span class="n">50</span>)
+	<span class="t">Console</span>.newline()
+
+	<span class="t">Console</span>.line(<span class="s">&quot;You could then print it to the actual console if needed&quot;</span>)
+}
+
+<span class="t">Console</span> <span class="o">&lt;&lt;</span> buffer <span class="k">if</span> something.went_wrong?</code></pre>
+
+<h2><a id="notes" class="anchor" href="#notes">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Notes</h2>
+
+<ul><li>'Monkey patches' <code>IO::Memory.truncate</code></li><li>Currently not <code>fork</code> or thread/fiber safe.</li></ul>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/chris-huxtable/console.cr/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/chris-huxtable" target="_blank">Chris Huxtable</a> - creator, maintainer</li></ul>
+</div>
+</body>
+</html>
